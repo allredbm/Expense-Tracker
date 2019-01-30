@@ -1,0 +1,19 @@
+<div class="container mt-5">
+
+  <div class="create">
+
+    <div>Name:</div>
+    <input type="text" name="name" placeholder="Name" [(ngModel)]="newExpense.name" />
+
+    <div>Date:</div>
+    <input type="date" name="date" placeholder="Date" [(ngModel)]="newExpense.date" />
+
+    <div>Type</div>
+    <input type="text" name="type" placeholder="Type" [(ngModel)]="newExpense.type" />
+
+    <div>Amount</div>
+    <input type="number" name="amount" [(ngModel)]="newExpense.amount" />
+
+  </div>
+  <button type="submit" class="btn btn-primary m-5" (click)="create()">Submit</button>
+</div>

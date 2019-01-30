@@ -1,17 +1,26 @@
-<!-- from other site -->
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
 
-<!-- <a href=""><button type="button" class="btn btn-primary btn-lg btn-block">CREATE YOUR WORKOUT</button></a> -->
-<!-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> -->
+    <div class="expenses" *ngIf="expensesList">
 
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-
-    <div class="bg-video">
-      <video class="bg-video__content" autoplay muted loop style="width: 100%; height: 100vh;  background-color: black;">
-        <!-- <source src="/assets/street.mp4" type="video/mp4"> -->
-
-          <source src="/assets/superhero.mp4" type="video/mp4">        
-             Your browser is not supported!
-      </video>
+      <div class="workout" *ngFor="let expense of expensesList">
+        <div>{{expense.name}}</div>
+        <div>{{expense.date | date}}</div>
+        <div>{{expense.type}}</div>
+        <div>{{expense.amount | currency}}</div>
+        <div class="options">
+           <a [routerLink]="['/expenses/edit/', expense._id]">
+           <button class="btn btn-warning">
+             <i class="fa fa-pencil"></i>
+            </button>
+            </a>
+           <button class="btn btn-danger" (click)="deleteExpense(expense)">
+             <i class="fa fa-trash"></i>
+            </button>
+        </div>
+      </div>
     </div>
-    </div>
+
+  </div>
+</div>

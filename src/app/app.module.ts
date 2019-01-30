@@ -9,20 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { IndexComponent } from './index/index.component';
-import { EditExerciseComponent } from './edit-exercise/edit-exercise.component';
-import { ExerciseListComponent } from './exercise-list/exercise-list.component';
-import { CreateExerciseComponent } from './create-exercise/create-exercise.component';
+import { EditExpenseComponent } from './edit-expense/edit-expense.component';
+import { CreateExpenseComponent } from './create-expense/create-expense.component';
 
-import { ExerciseService } from './services/exercise.services';
+import { ExpenseService } from './services/expense.services';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     IndexComponent,
-    EditExerciseComponent,
-    ExerciseListComponent,
-    CreateExerciseComponent
+    EditExpenseComponent,
+    CreateExpenseComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +29,7 @@ import { ExerciseService } from './services/exercise.services';
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [ExerciseService],
+  providers: [ExpenseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
